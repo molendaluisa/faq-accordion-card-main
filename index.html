@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +11,87 @@
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
 </head>
+
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+  <div class="container">
+    <div class="graphics">
+      <!-- <div class="overflow-hidden"> -->
+        <img src="./images/bg-pattern-desktop.svg" alt="background-pattern-desktop" class="bg">
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+        <img src="./images/bg-pattern-mobile.svg" alt="background-pattern-mobile" class="bg-mobile">
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+        <img src="./images/illustration-woman-online-desktop.svg" alt="Illustrative Woman" class="woman">
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+        <img src="./images/illustration-woman-online-mobile.svg" alt="woman" class="woman-mobile">
+      <!-- </div> -->
+      <img src="./images/illustration-box-desktop.svg" alt="Box" class="box">
+    </div>
+    <h1>FAQ</h1>
+    <div class="menu">
+      <li class="menu-item" id="q1">
+        <a href="#q1" class="btn">
+          How many team members can I invite?
+          <img src="../faq-accordion-card-main/images/icon-arrow-down.svg" alt="Arrow Down">
+        </a>
+        <div class="menu-item-sub">
+          <p>
+            You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.
+          </p>
+        </div>
+      </li>
+      <li class="menu-item" id="q2">
+        <a href="#q2" class="btn">
+          What is the maximum file upload size?
+          <img src="../faq-accordion-card-main/images/icon-arrow-down.svg" alt="Arrow Down">
+        </a>
+        <div class="menu-item-sub">
+          <p>
+            No more than 2GB. All files in your account must fit your allotted storage space.
+          </p>
+        </div>
+      </li>
+      <li class="menu-item" id="q3">
+        <a href="#q3" class="btn">
+          How do I reset my password?
+          <img src="../faq-accordion-card-main/images/icon-arrow-down.svg" alt="Arrow Down">
+        </a>
+        <div class="menu-item-sub">
+          <p>
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </p>
+        </div>
+      </li>
+      <li class="menu-item" id="q4">
+        <a href="#q4" class="btn">
+          Can I cancel my subscription?
+          <img src="../faq-accordion-card-main/images/icon-arrow-down.svg" alt="Arrow Down">
+        </a>
+        <div class="menu-item-sub">
+          <p>
+            Yes! Send us a message and we’ll process your request no questions asked.
+          </p>
+        </div>
+      </li>
+      <li class="menu-item" id="q5">
+        <a href="#q5" class="btn">
+          Do you provide additional support?
+          <img src="../faq-accordion-card-main/images/icon-arrow-down.svg" alt="Arrow Down">
+        </a>
+        <div class="menu-item-sub">
+          <p>
+            Chat and email support is available 24/7. Phone lines are open during normal business hours.
+          </p>
+        </div>
+      </li>
+    </div>
+  </div>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/molendaluisa" target="_blank">Luisa Molenda</a>.
   </div>
 </body>
+
 </html>

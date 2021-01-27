@@ -1,6 +1,156 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
 body {
-  color: #f47c57;
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background-image: linear-gradient(#af67e9, #6565e7);
   font-family: "Kumbh Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  background: white;
+  border-radius: 25px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.graphics {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.bg {
+  display: none;
+}
+
+.bg-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.woman {
+  display: none;
+}
+
+.woman-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  display: none;
+}
+
+.menu {
+  overflow: hidden;
+  margin: 0 20px 50px 20px;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu-item {
+  list-style: none;
+  border-bottom: 1px solid #e7e7e9;
+  overflow: hidden;
+}
+
+.menu-item-sub {
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+}
+
+.menu-item-sub p {
+  font-size: 12px;
+  position: relative;
+  margin-top: 0;
+  margin-right: 35px;
+  color: #787887;
+  line-height: 1.5;
+}
+
+.btn {
+  display: block;
+  color: #4a4b5e;
+  font-size: 14px;
+  position: relative;
+  height: 3.125em;
+  margin-top: 18px;
+}
+
+.btn img {
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.menu-item:target .menu-item-sub {
+  max-height: 10em;
+}
+
+.menu-item:target .btn {
+  height: 30px;
+  font-weight: 700;
+}
+
+.menu-item:target .btn img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.attribution {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.attribution a {
+  color: white;
+  text-decoration: underline;
+}
+
+.attribution a:hover {
+  color: #1d1e35;
 }
 /*# sourceMappingURL=style.css.map */

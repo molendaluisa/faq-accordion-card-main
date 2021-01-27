@@ -1,6 +1,141 @@
 @import "./variables";
 
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-    color: $soft-red;
-    font-family: $kumbhSans;
+  min-height: 100vh;
+  background-image: linear-gradient($soft-violet, $soft-blue);
+  font-family: $kumbhSans;
+
+  @include flexCenter();
+}
+
+.container {
+  background: white;
+  border-radius: 25px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.graphics {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+// .overflow-hidden {
+//   position: relative;
+//   height: 100%;
+//   overflow: hidden;
+// }
+
+.bg {
+  display: none;
+}
+.bg-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.woman {
+  display: none;
+}
+
+.woman-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box {
+display: none;
+}
+
+.menu {
+  overflow: hidden;
+  margin: 0 20px 50px 20px;
+
+  a {
+    text-decoration: none;
+  }
+  &-item {
+    list-style: none;
+    border-bottom: 1px solid $light-grayish-blue;
+    overflow: hidden;
+
+    &-sub {
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+
+      p {
+        font-size: $text-size;
+        position: relative;
+        margin-top: 0;
+        margin-right: 35px;
+        color: $dark-grayish-blue;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.btn {
+  display: block;
+  color: $very-dark-grayish-blue;
+  font-size: 14px;
+  position: relative;
+  height: 3.125em;
+  margin-top: 18px;
+
+  img {
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.menu-item:target {
+  .menu-item-sub {
+    max-height: 10em;
+  }
+  .btn {
+    height: 30px;
+    font-weight: $heavy-weight;
+
+    img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.attribution {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: $text-size;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: $very-dark-blue;
+  }
 }

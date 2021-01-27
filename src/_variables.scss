@@ -4,14 +4,14 @@ $soft-red: hsl(14, 88%, 65%);
 
 //background gradient
 $soft-violet: hsl(273, 75%, 66%);
-$sof-blue: hsl(240, 73%, 65%);
+$soft-blue: hsl(240, 73%, 65%);
 
 //text
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
 $kumbhSans: 'Kumbh Sans', sans-serif;
 $very-dark-grayish-blue: hsl(237, 12%, 33%);
-$dark-grayis-blue: hsl(240, 6%, 50%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
 $text-size: 12px;
 $light-weight: 400;
 $heavy-weight: 700;
@@ -20,6 +20,13 @@ $heavy-weight: 700;
 //dividers
 $light-grayish-blue: hsl(240, 5%, 91%);
 
+//flexcenter
+@mixin flexCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
