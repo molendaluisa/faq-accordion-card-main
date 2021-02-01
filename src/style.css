@@ -17,6 +17,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
   background-image: linear-gradient(#af67e9, #6565e7);
@@ -39,101 +41,105 @@ body {
 .container {
   background: white;
   border-radius: 25px;
+  margin: 0 20px;
+  margin-top: 100px;
 }
 
 .container h1 {
   text-align: center;
+  margin-top: 120px;
+  margin-bottom: 0;
 }
 
-.graphics {
+.graphics-wrapper {
   position: relative;
-  height: 100%;
-  width: 100%;
 }
 
 .bg {
   display: none;
 }
 
-.bg-mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .woman {
   display: none;
 }
 
-.woman-mobile {
+.bg-mobile {
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 45px;
+  top: -10px;
+}
+
+.woman-mobile {
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: -110px;
 }
 
 .box {
   display: none;
 }
 
-.menu {
-  overflow: hidden;
-  margin: 0 20px 50px 20px;
+.accordion {
+  margin: 0 20px 40px 20px;
 }
 
-.menu a {
+.accordion a {
   text-decoration: none;
 }
 
-.menu-item {
+.accordion-item {
   list-style: none;
   border-bottom: 1px solid #e7e7e9;
   overflow: hidden;
 }
 
-.menu-item-sub {
-  overflow: hidden;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
+.accordion-item .accordion-question {
+  display: block;
+  color: #4a4b5e;
+  font-size: 12px;
+  position: relative;
+  height: 3.125em;
+  margin-top: 18px;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+.accordion-item .accordion-question .accordion-icon {
+  position: absolute;
+  right: 0;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.accordion-item .accordion-answer {
+  -webkit-transition: max-height 0.6s ease-in-out;
+  transition: max-height 0.6s ease-in-out;
   max-height: 0;
 }
 
-.menu-item-sub p {
+.accordion-item .accordion-answer p {
   font-size: 12px;
   position: relative;
   margin-top: 0;
-  margin-right: 35px;
+  margin-right: 25px;
   color: #787887;
   line-height: 1.5;
 }
 
-.btn {
-  display: block;
-  color: #4a4b5e;
-  font-size: 14px;
-  position: relative;
-  height: 3.125em;
-  margin-top: 18px;
-}
-
-.btn img {
-  position: absolute;
-  right: 0;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
-
-.menu-item:target .menu-item-sub {
+.accordion-item:target .accordion-answer {
   max-height: 10em;
 }
 
-.menu-item:target .btn {
+.accordion-item:target .accordion-question {
   height: 30px;
   font-weight: 700;
 }
 
-.menu-item:target .btn img {
+.accordion-item:target .accordion-question .accordion-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -141,7 +147,7 @@ body {
 .attribution {
   color: white;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 12px;
 }
 
@@ -152,5 +158,56 @@ body {
 
 .attribution a:hover {
   color: #1d1e35;
+}
+
+@media (min-width: 400px) {
+  .graphics-wrapper-inner {
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 112% 61%;
+    height: 485px;
+    width: 458px;
+  }
+  .bg-mobile {
+    display: none;
+  }
+  .woman-mobile {
+    display: none;
+  }
+  .woman {
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: -17%;
+  }
+  .box {
+    display: block;
+    position: absolute;
+    left: -28%;
+    top: 195px;
+  }
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 915px;
+  }
+  .container h1 {
+    text-align: left;
+    margin-top: 65px;
+    margin-bottom: 25px;
+  }
+  .accordion {
+    margin: 0 90px 40px 20px;
+  }
+  .accordion-question {
+    height: 2.5em;
+  }
+  .accordion-question:hover {
+    color: #f47c57;
+    cursor: pointer;
+  }
 }
 /*# sourceMappingURL=style.css.map */

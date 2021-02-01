@@ -16,6 +16,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   background-image: linear-gradient($soft-violet, $soft-blue);
   font-family: $kumbhSans;
@@ -26,50 +28,42 @@ body {
 .container {
   background: white;
   border-radius: 25px;
+  margin: 0 20px;
+  margin-top: 100px;
 
   h1 {
     text-align: center;
+    margin-top: 120px;
+    margin-bottom: 0;
   }
 }
-
-.graphics {
+.graphics-wrapper {
   position: relative;
-  height: 100%;
-  width: 100%;
 }
-
-// .overflow-hidden {
-//   position: relative;
-//   height: 100%;
-//   overflow: hidden;
-// }
-
 .bg {
   display: none;
 }
-.bg-mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .woman {
   display: none;
 }
-
-.woman-mobile {
+.bg-mobile {
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 45px;
+  top: -10px;
 }
-
+.woman-mobile {
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: -110px;
+}
 .box {
-display: none;
+  display: none;
 }
 
-.menu {
-  overflow: hidden;
-  margin: 0 20px 50px 20px;
+.accordion {
+  margin: 0 20px 40px 20px;
 
   a {
     text-decoration: none;
@@ -79,16 +73,31 @@ display: none;
     border-bottom: 1px solid $light-grayish-blue;
     overflow: hidden;
 
-    &-sub {
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
+    .accordion-question {
+      display: block;
+      color: $very-dark-grayish-blue;
+      font-size: 12px;
+      position: relative;
+      height: 3.125em;
+      margin-top: 18px;
+      transition-property: all;
+
+      .accordion-icon {
+        position: absolute;
+        right: 0;
+        transition: transform 300ms ease;
+      }
+    }
+
+    .accordion-answer {
+      transition: max-height 0.6s ease-in-out;
       max-height: 0;
 
       p {
         font-size: $text-size;
         position: relative;
         margin-top: 0;
-        margin-right: 35px;
+        margin-right: 25px;
         color: $dark-grayish-blue;
         line-height: 1.5;
       }
@@ -96,30 +105,15 @@ display: none;
   }
 }
 
-.btn {
-  display: block;
-  color: $very-dark-grayish-blue;
-  font-size: 14px;
-  position: relative;
-  height: 3.125em;
-  margin-top: 18px;
-
-  img {
-    position: absolute;
-    right: 0;
-    transition: transform 0.3s ease-in-out;
-  }
-}
-
-.menu-item:target {
-  .menu-item-sub {
+.accordion-item:target {
+  .accordion-answer {
     max-height: 10em;
   }
-  .btn {
+  .accordion-question {
     height: 30px;
     font-weight: $heavy-weight;
 
-    img {
+    .accordion-icon {
       transform: rotate(180deg);
     }
   }
@@ -128,7 +122,7 @@ display: none;
 .attribution {
   color: white;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: $text-size;
 
   a {
@@ -137,5 +131,63 @@ display: none;
   }
   a:hover {
     color: $very-dark-blue;
+  }
+}
+
+@media (min-width: 400px) {
+  .graphics-wrapper-inner {
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 112% 61%;
+    height: 485px;
+    width: 458px;
+  }
+
+  .bg-mobile {
+    display: none;
+  }
+
+  .woman-mobile {
+    display: none;
+  }
+
+  .woman {
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: -17%;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    left: -28%;
+    top: 195px;
+  }
+
+  .container {
+    display: flex;
+    width: 915px;
+
+    h1 {
+      text-align: left;
+      margin-top: 65px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .accordion {
+    margin: 0 90px 40px 20px;
+  }
+
+  .accordion-question {
+    height: 2.5em;
+
+    &:hover {
+      color: $soft-red;
+      cursor: pointer;
+    }
   }
 }
