@@ -65,58 +65,55 @@ body {
 .accordion {
   margin: 0 20px 40px 20px;
 
-  a {
-    text-decoration: none;
+  .accordion-item {
+    border-bottom: 1px solid #e7e7e9;
   }
-  &-item {
-    list-style: none;
-    border-bottom: 1px solid $light-grayish-blue;
-    overflow: hidden;
 
-    .accordion-question {
-      display: block;
-      color: $very-dark-grayish-blue;
-      font-size: 12px;
-      position: relative;
-      height: 3.125em;
-      margin-top: 18px;
-      transition-property: all;
+  .accordion-input {
+    display: none;
+  }
 
-      .accordion-icon {
-        position: absolute;
-        right: 0;
-        transition: transform 300ms ease;
-      }
+  .accordion-question {
+    display: block;
+    color: $very-dark-grayish-blue;
+    font-size: 0.875em;
+    position: relative;
+    height: 3.125em;
+    margin-top: 18px;
+    min-width: 280px;
+
+    .accordion-icon {
+      position: absolute;
+      right: 0;
+      transition: transform 300ms ease;
     }
+  }
 
-    .accordion-answer {
-      transition: max-height 0.6s ease-in-out;
-      max-height: 0;
+  .accordion-answer {
+    display: none;
 
-      p {
-        font-size: $text-size;
-        position: relative;
-        margin-top: 0;
-        margin-right: 25px;
-        color: $dark-grayish-blue;
-        line-height: 1.5;
-      }
+    p {
+      font-size: $text-size;
+      position: relative;
+      margin-top: 0;
+      margin-right: 25px;
+      color: $dark-grayish-blue;
+      line-height: 1.5;
     }
   }
 }
 
-.accordion-item:target {
-  .accordion-answer {
-    max-height: 10em;
-  }
-  .accordion-question {
-    height: 30px;
-    font-weight: $heavy-weight;
+.accordion-input:checked ~ .accordion-answer {
+  display: block;
+}
 
-    .accordion-icon {
-      transform: rotate(180deg);
-    }
-  }
+.accordion-input:checked ~ .accordion-question {
+  height: 30px;
+  font-weight: $heavy-weight;
+}
+
+.accordion-input:checked ~ .accordion-icon {
+  transform: rotate(180deg);
 }
 
 .attribution {
@@ -140,8 +137,8 @@ body {
     overflow: hidden;
     background-image: url(../images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-position: 112% 61%;
-    height: 485px;
+    background-position: 112% 62%;
+    height: 508px;
     width: 458px;
   }
 
@@ -180,10 +177,15 @@ body {
 
   .accordion {
     margin: 0 90px 40px 20px;
+
+    &-item {
+      min-width: 350px;
+    }
   }
 
   .accordion-question {
     height: 2.5em;
+    
 
     &:hover {
       color: $soft-red;
