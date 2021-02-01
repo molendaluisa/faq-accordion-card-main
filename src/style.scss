@@ -110,10 +110,9 @@ body {
 .accordion-input:checked ~ .accordion-question {
   height: 30px;
   font-weight: $heavy-weight;
-}
-
-.accordion-input:checked ~ .accordion-icon {
+  .accordion-icon {
   transform: rotate(180deg);
+  }
 }
 
 .attribution {

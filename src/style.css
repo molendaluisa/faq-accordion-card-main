@@ -134,7 +134,7 @@ body {
   font-weight: 700;
 }
 
-.accordion-input:checked ~ .accordion-icon {
+.accordion-input:checked ~ .accordion-question .accordion-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
